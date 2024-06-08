@@ -1,0 +1,9 @@
+create venv
+python3 -m venv venv
+source venv/bin/activate
+
+python3 create-templates.py
+
+python3 setup.py install (it will create a egg fill which while create a local package file , package file can be accesses from anywhere)
+pip install -r requirements.txt
+

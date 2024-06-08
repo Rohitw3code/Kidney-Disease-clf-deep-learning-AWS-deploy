@@ -3,13 +3,14 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
+long_description = "deep learning project"
 
 __version__ = "0.0.0"
 
-REPO_NAME = "Kidney-Disease-Classification-Deep-Learning-Project"
-AUTHOR_USER_NAME = "krishnaik06"
+REPO_NAME = "Kidney-Disease-clf-deep-learning-AWS-deploy"
+AUTHOR_USER_NAME = "rohitw3code"
 SRC_REPO = "cnnClassifier"
-AUTHOR_EMAIL = "entbappy73@gmail.com"
+AUTHOR_EMAIL = "rohitcode005@gmail.com"
 
 
 setuptools.setup(
