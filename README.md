@@ -6,41 +6,39 @@ This repository contains the code for kidney disease classification using deep l
 
 ### 1. Create and Activate Virtual Environment
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
+## Create Templates
 
-Create Templates
-
-```bash
+```
 python3 create-templates.py
+```
 
-Install
-```bash
+## Install
+```
 python3 setup.py install
+```
 
-Install Requirements
+## Install Requirements
 
-```bash
+```
 pip install -r requirements.txt
+```
 
-Set Enviroment
-
-```bash
+## Set Enviroment
+```
 export MLFLOW_TRACKING_URI="https://dagshub.com/rohitcode005/Kidney-Disease-clf-deep-learning-AWS-deploy.mlflow"
 export MLFLOW_TRACKING_USERNAME="rohitcode005"
 export MLFLOW_TRACKING_PASSWORD=''
+```
 
-DVC code
-
-```bash
+### DVC 
+```
 dvc init
 dvc repro
 dev dag
+```
+### Run the Code without DVC
+### If you want to run the code without using DVC, use:
 
-Run the Code without DVC
-If you want to run the code without using DVC, use:
-
-```bash
+```
 python main.py
-
+```
