@@ -13,4 +13,9 @@ export MLFLOW_TRACKING_URI = "https://dagshub.com/rohitcode005/Kidney-Disease-cl
 export MLFLOW_TRACKING_USERNAME = "rohitcode005"
 export MLFLOW_TRACKING_PASSWORD = 'b53fb19cf0cae0da766408cf05c522d04c7f8d66'
 
-python main.py
+dvc init
+dvc repro # to run the code
+dvc dag
+
+#to run the code without DVC (data version control)
+(python main.py)
