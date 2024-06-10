@@ -7,3 +7,10 @@ python3 create-templates.py
 python3 setup.py install (it will create a egg fill which while create a local package file , package file can be accesses from anywhere)
 pip install -r requirements.txt
 
+
+run in terminal one by one
+export MLFLOW_TRACKING_URI = "https://dagshub.com/rohitcode005/Kidney-Disease-clf-deep-learning-AWS-deploy.mlflow"
+export MLFLOW_TRACKING_USERNAME = "rohitcode005"
+export MLFLOW_TRACKING_PASSWORD = 'b53fb19cf0cae0da766408cf05c522d04c7f8d66'
+
+python main.py

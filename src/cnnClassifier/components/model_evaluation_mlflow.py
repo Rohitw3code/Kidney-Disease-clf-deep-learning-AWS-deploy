@@ -7,9 +7,6 @@ from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
 import dagshub
 import mlflow
-from cnnClassifier import *
-
-
 
 dagshub.init(repo_owner='rohitcode005', repo_name='Kidney-Disease-clf-deep-learning-AWS-deploy', mlflow=True)
 
@@ -61,15 +58,22 @@ class Evaluation:
     
     def log_into_mlflow(self):
 
+        # with mlflow.start_run():
+        #     mlflow.log_metric('accuracy', 42)
+        #     mlflow.log_param('Param name', 'Value')
+
+
+        mlflow.set_registry_uri(self.config.mlflow_uri)
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        
         with mlflow.start_run():
-            mlflow.log_metric(
+            mlflow.log_params(self.config.all_params)
+            mlflow.log_metrics(
                 {"loss": self.score[0], "accuracy": self.score[1]}
             )
-            mlflow.log_param(self.config.all_params)
-            mlflow.set_registry_uri(self.config.mlflow_uri)
-            tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
             # Model registry does not work with file store
             if tracking_url_type_store != "file":
+
                 # Register the model
                 # There are other ways to use the Model Registry, which depends on the use case,
                 # please refer to the doc for more information:
@@ -77,6 +81,3 @@ class Evaluation:
                 mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
             else:
                 mlflow.keras.log_model(self.model, "model")
-            logger.info("MLFlow completed")
-
-

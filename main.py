@@ -11,31 +11,31 @@ STAGE_NAME_2 = "Prepare Model Base"
 
 
 if __name__ == '__main__':
-    # try:
-    #     logger.info(f'>>>> Stage {STAGE_NAME_1} started ==============')
-    #     data_ingestion = DataIngestionTrainingPipeline()
-    #     data_ingestion.main()
-    #     logger.info(f'>>>> Stage {STAGE_NAME_1} completed ==============')
-    # except Exception as e:
-    #     logger.error(e)
+    try:
+        logger.info(f'>>>> Stage {STAGE_NAME_1} started ==============')
+        data_ingestion = DataIngestionTrainingPipeline()
+        data_ingestion.main()
+        logger.info(f'>>>> Stage {STAGE_NAME_1} completed ==============')
+    except Exception as e:
+        logger.error(e)
 
-    # try:
-    #     logger.info(f'>>>> Stage {STAGE_NAME_2} started =============')
-    #     prepareBaseModel = PrepareBaseModelTrainingPipeline()
-    #     prepareBaseModel.main()
-    #     logger.info(f'>>>> Stage {STAGE_NAME_2} completed =============')
-    # except Exception as e:
-    #     logger.error(e)
+    try:
+        logger.info(f'>>>> Stage {STAGE_NAME_2} started =============')
+        prepareBaseModel = PrepareBaseModelTrainingPipeline()
+        prepareBaseModel.main()
+        logger.info(f'>>>> Stage {STAGE_NAME_2} completed =============')
+    except Exception as e:
+        logger.error(e)
 
-    # try:
-    #     STAGE_NAME = 'Model Training'
-    #     logger.info(f'>>> Stage {STAGE_NAME} started =================================')
-    #     trainModel = TrainingModelPipeline()
-    #     trainModel.main()
-    #     logger.info(f'>>> Stage {STAGE_NAME} completed================================')
+    try:
+        STAGE_NAME = 'Model Training'
+        logger.info(f'>>> Stage {STAGE_NAME} started =================================')
+        trainModel = TrainingModelPipeline()
+        trainModel.main()
+        logger.info(f'>>> Stage {STAGE_NAME} completed================================')
 
-    # except Exception as e:
-    #     pass
+    except Exception as e:
+        pass
 
 
     try:
